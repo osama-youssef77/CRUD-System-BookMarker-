@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookMarker</title>
+
+    <link rel="shortcut icon" href="images/logo2.png" type="image/x-icon" />
+    <!-- fonts files -->
+    <!-- //montserrat font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fontawesome file -->
+    <link rel="stylesheet" href="css/all.min.css" />
+
+    <!-- bootstrap css file -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- css file -->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <section>
+      <div class="bookmarker-system d-flex">
+        <!-- -- start input part -- -->
+
+        <div
+          class="input-part px-5 w-40 bg-website d-flex flex-column text-center vh-100"
+        >
+          <div class="logo-part py-3 dotted-border">
+            <p class="logo-style">Bookmarker</p>
+          </div>
+
+          <div class="user-info mt-4 mb-2 dotted-border">
+            <img
+              src="images/user-img.jpg"
+              alt="user-img"
+              class="w-20 rounded-circle img-border"
+            />
+            <p class="username-style">@username</p>
+          </div>
+
+          <div class="inputs-info mt-4">
+            <label for="siteNameInput">
+              <i class="fa-regular fa-bookmark username-style text-warning"></i>
+              <span class="text-capitalize username-style">site name</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Enter Website Name"
+              class="form-control w-75 mx-auto my-2"
+              id="siteNameInput"
+              oninput="siteNameValidation();RepeatNameValidation() "
+            />
+
+            <label for="siteUrlInput">
+              <i class="fa-solid fa-link link-icon"></i>
+              <span class="text-capitalize username-style">site URL</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Enter Website URL"
+              class="form-control w-75 mx-auto my-2"
+              id="siteUrlInput"
+              oninput="siteUrlValidation()"
+            />
+
+            <button
+              class="text-capitalize rounded-3 add-button"
+              id="addButton"
+              onclick="addWebsite()"
+            >
+              add website
+            </button>
+          </div>
+        </div>
+        <!-- -- end input part -->
+
+        <!-- -- start display part --  -->
+
+        <div class="display-part w-60 text-center bg-table">
+          <h3
+            class="text-capitalize bg-warning w-75 mx-auto py-2 rounded-3 mt-4 mb-4"
+          >
+            your websites
+          </h3>
+
+          <div class="display-tab">
+            <table class="table w-90 mx-auto">
+              <thead>
+                <tr>
+                  <th class="text-capitalize">index</th>
+                  <th class="text-capitalize">website name</th>
+                  <th class="text-capitalize">visit</th>
+                  <th class="text-capitalize">delete</th>
+                </tr>
+              </thead>
+
+              <tbody id="tableBody">
+                <tr></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- -- end display part -->
+      </div>
+    </section>
+
+    <!-- sweetalert library -->
+    <script src="js/sweetalert2.all.min.js"></script>
+
+    <!-- bootstrap js file -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- manual js file -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
